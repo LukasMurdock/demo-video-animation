@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="position: relative; width: 100%; height: 100vh;">
+    <nav>
+        <ul><li><a href="./img_1fps.html">img 1fps test</a></li></ul>
+        <ul><li><a href="./img_2fps.html">img 2fps test</a></li></ul>
+        <ul><li><a href="./video_1fps.html">video 1fps test</a></li></ul>
+        <ul><li><a href="./video_12fps.html">video 12fps test</a></li></ul>
+        <ul><li><a href="./video_60fps.html">video 60fps test</a></li></ul>
+    </nav>
+    <img-scroller style="min-width: 100%; top: 0; min-height:100%; position: sticky;">
+        <img src="./frames/output_0001.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0002.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0003.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0004.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0005.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0006.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0007.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0008.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0009.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0010.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0011.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+        <img src="./frames/output_0012.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+    </img-scroller>
+    <!-- spacer div -->
+    <div style="height: 100vh; width: 100vw; position: sticky;"></div>
+    <script type="text/javascript">
+        const imgScroller = document.querySelector('img-scroller');
+        const imageCount = imgScroller.children.length;
+        const imageElArray = Array.from(imgScroller.children);
+        let isScrolling = false;
+        let activeIndex = 0;
+        let desiredIndex = 0;
+        // set first image to display
+        imageElArray[0].style.display = 'block';
+
+        window.addEventListener('scroll', function(e) {
+            // Check if the user is actively scrolling (debounce)
+            if (!isScrolling) {
+                isScrolling = true;
+
+                // Use requestAnimationFrame to improve performance
+                requestAnimationFrame(function() {
+                    // hide and show the child image nodes based on the scroll position
+                    const scrollPosition = window.pageYOffset;
+                    desiredIndex = Math.min(Math.floor(scrollPosition / (window.innerHeight / imageCount)), imageCount - 1);
+                    if (desiredIndex !== activeIndex) {
+                        activeIndex = desiredIndex;
+                        imageElArray.forEach((el, index) => {
+                            if (index === activeIndex) {
+                                el.style.display = 'block';
+                            } else {
+                                el.style.display = 'none';
+                            }
+                        })
+                    }
+                    isScrolling = false; // Reset scrolling flag
+
+                });
+            }
+        })
+
+    </script>
+</body>
+</html>
