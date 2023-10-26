@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img-scroller {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            min-height:100%;
+        }
+        img-scroller img {
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+            display: none;
+        }
+    </style>
 </head>
 <body class="position: relative; width: 100%; height: 100vh;">
     <nav>
@@ -13,29 +27,29 @@
         <ul><li><a href="./video_12fps.html">video 12fps test</a></li></ul>
         <ul><li><a href="./video_60fps.html">video 60fps test</a></li></ul>
     </nav>
-    <img-scroller style="min-width: 100%; top: 0; min-height:100%; position: sticky;">
-        <img src="./2fps_frames/output_0001.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0002.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0003.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0004.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0005.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0006.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0007.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0008.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0009.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0010.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0011.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0012.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0013.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0014.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0015.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0016.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0017.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0018.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0019.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0020.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0021.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
-        <img src="./2fps_frames/output_0022.png" style="width: 100%; height:100%; object-fit: cover; display: none;">
+    <img-scroller>
+        <img src="./2fps_frames/output_0001.png">
+        <img src="./2fps_frames/output_0002.png">
+        <img src="./2fps_frames/output_0003.png">
+        <img src="./2fps_frames/output_0004.png">
+        <img src="./2fps_frames/output_0005.png">
+        <img src="./2fps_frames/output_0006.png">
+        <img src="./2fps_frames/output_0007.png">
+        <img src="./2fps_frames/output_0008.png">
+        <img src="./2fps_frames/output_0009.png">
+        <img src="./2fps_frames/output_0010.png">
+        <img src="./2fps_frames/output_0011.png">
+        <img src="./2fps_frames/output_0012.png">
+        <img src="./2fps_frames/output_0013.png">
+        <img src="./2fps_frames/output_0014.png">
+        <img src="./2fps_frames/output_0015.png">
+        <img src="./2fps_frames/output_0016.png">
+        <img src="./2fps_frames/output_0017.png">
+        <img src="./2fps_frames/output_0018.png">
+        <img src="./2fps_frames/output_0019.png">
+        <img src="./2fps_frames/output_0020.png">
+        <img src="./2fps_frames/output_0021.png">
+        <img src="./2fps_frames/output_0022.png">
     </img-scroller>
     <!-- spacer div -->
     <div style="height: 100vh; width: 100vw; position: sticky;"></div>
